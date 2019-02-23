@@ -1,7 +1,7 @@
 ﻿function popup() {
     $.ajax({
         type: 'get',
-        url: '/employees/Create',
+        url: 'AppDepartmentEmployee/employees/Create',
         data: {
             'field1': 'hello',
             'field2': 'hello1'

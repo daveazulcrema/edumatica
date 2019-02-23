@@ -14,6 +14,7 @@ namespace AppDepartmentEmployee.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class Employees
@@ -21,10 +22,12 @@ namespace AppDepartmentEmployee.Models
         public int id { get; set; }
         [DisplayName("Nombre")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "Direccion Obligatoria")]
         [DisplayName("Dirección")]
         public string direccion { get; set; }
         [DisplayName("Telefono")]
         public string telefono { get; set; }
+        [Required(ErrorMessage ="Edad Obligatoria")]
         [DisplayName("Edad")]
         public int edad { get; set; }
         [DisplayName("Departamento")]

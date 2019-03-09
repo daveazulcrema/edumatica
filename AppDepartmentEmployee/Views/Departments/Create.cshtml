@@ -1,10 +1,11 @@
 ﻿@model AppDepartmentEmployee.Models.Departments
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Crear Departamento";
+    Layout = null;
 }
 
-<h2>Create</h2>
+<h2>Crear Departamento</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -24,12 +25,9 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-link" /> |
+                @Html.ActionLink("Regresar", "Index")
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

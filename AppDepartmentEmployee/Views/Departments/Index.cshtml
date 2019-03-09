@@ -1,33 +1,33 @@
 ﻿@model IEnumerable<AppDepartmentEmployee.Models.Departments>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Departamentos";
 }
 
-<h2>Index</h2>
+<h2 align="center">Panen de administracion de departamentos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th></th>
-    </tr>
+    <button type="button" onclick="popup('departments/create','GET')" class="btn btn-success">Crear Nuevo</button>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    <a href="#" onclick="popupid('departments/Edit/',@item.id, 'GET')">Editar</a> |
+                    <a href="#" onclick="popupid('departments/details/',@item.id,'GET')">Detalles</a> |
+                    <a href="#" onclick="popupid('departments/Delete/',@item.id,'GET')">Eliminar</a>
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>

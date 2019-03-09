@@ -1,11 +1,8 @@
-﻿function popup() {
+﻿function popup(url_, type_) {
     $.ajax({
-        type: 'get',
-        url: 'employees/Create',
-        data: {
-            'field1': 'hello',
-            'field2': 'hello1'
-        },
+        type: type_,
+        url: url_,
+        //data: { },
         success: function (response) {
             $("#show-modal").modal({ show: true, backdrop: 'static', keyboard: false })
             $('#inner-show-modal').html(response);

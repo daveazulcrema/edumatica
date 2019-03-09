@@ -39,10 +39,11 @@ namespace AppDepartmentEmployee.Controllers
         }
 
         // GET: Employees/Create
+        [HttpGet]
         public ActionResult Create()
         {
             ViewBag.department_id = new SelectList(db.Departments, "id", "nombre");
-            return View();
+            return View("Create");
         }
 
         // POST: Employees/Create
@@ -64,6 +65,7 @@ namespace AppDepartmentEmployee.Controllers
         }
 
         // GET: Employees/Edit/5
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,7 +80,6 @@ namespace AppDepartmentEmployee.Controllers
             ViewBag.department_id = new SelectList(db.Departments, "id", "nombre", employees.department_id);
             return View(employees);
         }
-
         // POST: Employees/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -97,6 +98,7 @@ namespace AppDepartmentEmployee.Controllers
         }
 
         // GET: Employees/Delete/5
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)

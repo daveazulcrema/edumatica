@@ -7,7 +7,7 @@
 <h2 align="center">Panel de Administración de Empleados</h2>
 
 <p>
-    <button type="button" onclick="popup()" class="btn btn-success">Crear Nuevo</button>
+    <button type="button" onclick="popup('employees/create','GET')" class="btn btn-success">Crear Nuevo</button>
     @*<a href="@Url.Action("Create", "Employees")" type="button" class="btn btn-success">Crear Nuevo</a>*@
     @* @Html.ActionLink("Create New", "Create")*@
 </p>
@@ -50,9 +50,10 @@
                 @Html.DisplayFor(modelItem => item.Departments.nombre)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                <a href="#" onclick="popupid('employees/Edit/',@item.id, 'GET')">Editar</a> |
+                @*@Html.ActionLink("Editar","",new { id = item.id }, new { @onclick = "popup()" }) |*@
+                <a href="#" onclick="popupid('employees/details/',@item.id,'GET')">Detalles</a> |
+                <a href="#" onclick="popupid('employees/Delete/',@item.id,'GET')">Eliminar</a> 
             </td>
         </tr>
     }
